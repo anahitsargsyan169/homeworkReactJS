@@ -1,10 +1,8 @@
 const contentUl = document.querySelector("div > ul");
 function handleClick(evt){
-    console.log(evt.target.id)
     if(evt.target.id === "remover"|| evt.target.parentElement.id === "remover") {
 		evt.target.closest("li")?.remove();
-	} else if(evt.target.localName === "li")
-    {
+	} else if(evt.target.localName === "li") {
         evt.target.classList.toggle("clicked");
         if(evt.target.className){
             const idText = document.createElement("span");
@@ -20,12 +18,12 @@ fetch(`https://jsonplaceholder.typicode.com/todos`)
         data.forEach(item => {
             const listItem = document.createElement("li");
             const removerSpan = document.createElement("span");
-            const remover = document.createElement("img");
+            const removerImg = document.createElement("img");
             listItem.id = item.id;
             listItem.innerText = item.title;
-            remover.src = "icon-remove.png";
+            removerImg.src = "icon-remove.png";
             removerSpan.id = "remover"
-            removerSpan.append(remover);
+            removerSpan.append(removerImg);
             listItem.append(removerSpan);
             contentUl.append(listItem);
         });
