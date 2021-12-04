@@ -1,0 +1,14 @@
+.hidden {
+    display: none;
+}
+body *{
+    margin-bottom: 10px;
+}
+div > span {
+    margin-left: 10px;
+    font-size: 12px;
+    color: rgb(238, 0, 0);
+}
+.error{
+    border: 2px solid rgb(238, 0, 0);
+}
